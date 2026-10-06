@@ -9,6 +9,7 @@
   "author": "nuekkis",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.18.2",
     "mineflayer": "^4.37.1"
   }
 }
