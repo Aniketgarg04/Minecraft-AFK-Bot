@@ -1,3 +1,12 @@
+// --- Render Web Server Setup ---
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => res.send('Bot is running!'));
+app.listen(port, () => console.log(`Dummy server listening on port ${port}!`));
+// -------------------------------
+
 const mineflayer = require('mineflayer');
 const config = require('./config.json');
 
@@ -16,6 +25,9 @@ const STEP_SPEED    = 1;
 const JUMP_DURATION = 500;
 
 bot.on('spawn', () => {
+  // Teleport immediately to specific coordinates upon spawning
+  bot.chat('/tp -349 66 -500');
+
   setTimeout(() => {
     bot.setControlState('sneak', true);
     console.log(`✅ ${config.botUsername} is Ready!`);
@@ -62,5 +74,5 @@ bot.on('error', (err) => {
   console.error('⚠️ Error:', err);
 });
 bot.on('end', () => {
-  console.log('⛔️ Bot Disconnected!');
+  console.log('⛔ Bot Disconnected!');
 });
