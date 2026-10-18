@@ -2,6 +2,5 @@
   "serverHost": "aniketgarg0410.aternos.me",
   "serverPort": 41663,
   "botUsername": "AFK_Bot",
-
-  "botChunk": 4
+  "botChunk": 2
 }
